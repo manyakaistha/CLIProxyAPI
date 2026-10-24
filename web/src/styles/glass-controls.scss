@@ -1,102 +1,94 @@
-// Apply the same material to shared primitives and shell interaction states.
+// Tactile shared controls and consistent focus states across pages and portals.
 .card,
 .modal {
   background: var(--glass-fill);
   border-color: var(--glass-border);
-  border-radius: 28px;
+  border-radius: 22px;
   box-shadow: var(--glass-shadow);
-  backdrop-filter: var(--glass-backdrop-filter);
-  -webkit-backdrop-filter: var(--glass-backdrop-filter);
 }
 
 .btn {
-  border-radius: 999px;
+  min-height: 40px;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 600;
   transition:
-    transform var(--dur-hover) var(--ease-out-strong),
+    transform var(--dur-press) var(--ease-out-strong),
     background var(--dur-hover) ease,
+    border-color var(--dur-hover) ease,
     box-shadow var(--dur-hover) ease;
 }
-
+.btn.btn-sm {
+  min-height: 34px;
+  font-size: 12px;
+}
 .btn.btn-primary {
   color: var(--primary-contrast);
-  box-shadow:
-    0 5px 16px -8px color-mix(in srgb, var(--primary-color) 48%, transparent),
-    inset 0 1px 0 rgb(255 255 255 / 0.22);
+  background: var(--action-fill);
+  border-color: var(--action-edge);
+  box-shadow: var(--action-shadow);
 }
-
 .btn.btn-secondary {
   background: var(--glass-fill);
-  border-color: var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  border-color: var(--border-primary);
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
+}
+.btn:disabled {
+  opacity: 0.45;
+  box-shadow: none;
 }
 
 .input,
 textarea {
-  background: var(--glass-bg-secondary);
-  border-radius: 16px;
+  background: var(--bg-quinary);
+  border-radius: 11px;
+  font-size: 13px;
   box-shadow: var(--glass-inset);
-
+  &::placeholder {
+    color: var(--text-tertiary);
+  }
   &:focus {
+    border-color: var(--border-hover);
     box-shadow:
       var(--glass-inset),
       0 0 0 3px var(--primary-10);
   }
 }
 
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible,
-[tabindex]:focus-visible {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 4px;
-}
-
-.sidebar .nav-item.active,
-.sidebar .nav-item[aria-current='page'] {
-  color: var(--primary-color);
-  background: var(--glass-selected);
-  border-color: var(--glass-selected-border);
-  box-shadow: var(--glass-inset);
-
-  .nav-icon {
-    color: var(--primary-color);
-  }
-}
-
-.sidebar .nav-item:focus-visible {
+:is(button, a, input, select, textarea, summary, [tabindex]):focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 3px;
 }
 
+.sidebar .nav-item.active,
+.sidebar .nav-item[aria-current='page'] {
+  color: var(--text-primary);
+  background: var(--glass-selected);
+  border-color: var(--glass-selected-border);
+  box-shadow:
+    inset 0 1px 0 var(--glass-highlight),
+    0 2px 4px rgb(0 0 0 / 0.08);
+  .nav-icon {
+    color: var(--text-primary);
+  }
+}
 .sidebar .nav-drawer-toggle {
   background: transparent;
 }
 
-.content h1,
-.content h2,
-.content .card-header .title {
-  font-family: var(--font-editorial);
-  font-weight: 400;
-  letter-spacing: -0.025em;
-}
-
-@media (hover: hover) {
-  .btn:not(:disabled):hover {
-    transform: translateY(-2px);
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .btn:not(:disabled):active {
+    transform: translateY(1px);
   }
-
-  .sidebar .nav-item:hover {
-    transform: translateX(2px);
-    border-color: var(--glass-selected-border);
-    box-shadow: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .btn:not(:disabled):hover,
   .sidebar .nav-item:hover {
     transform: none;
+    border-color: var(--border-primary);
+  }
+}
+
+@media (pointer: coarse) {
+  .btn,
+  .btn.btn-sm {
+    min-height: 44px;
   }
 }

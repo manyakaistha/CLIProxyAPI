@@ -1,9 +1,10 @@
 /**
- * 全局样式
+ * Global styles
  */
 
 @use './variables.scss' as *;
 @use './mixins.scss' as *;
+@use './fonts.scss';
 @use './reset.scss';
 @use './themes.scss';
 @use './glass.scss';
@@ -29,7 +30,7 @@ body.modal-open .content {
   overflow: hidden;
 }
 
-// 滚动条样式
+// Scrollbar styles
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
