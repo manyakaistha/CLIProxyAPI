@@ -39,3 +39,9 @@ bin
 .bmad
 _bmad
 _bmad-output
+
+# Frontend dependencies and generated bundles
+web/node_modules
+web/dist
+temp
+static

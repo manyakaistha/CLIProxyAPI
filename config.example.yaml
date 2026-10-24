@@ -93,7 +93,8 @@ management:
 
   # Disable automatic periodic background updates of the management panel from GitHub (default: false).
   # When enabled, the panel is only downloaded on first access if missing, and never auto-updated afterward.
-  # disable-auto-update-panel: false
+  # Preserve the custom glass UI built from web/ in this checkout.
+  disable-auto-update-panel: true
 
   # Base URL of remote management API when using TUI client mode (cliproxyapi --tui).
   # Defaults to http://127.0.0.1:<port> if not set. Can also be set via --management-base-url.
