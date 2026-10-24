@@ -1,0 +1,11 @@
+// Keep OAuth provider dialogs aligned with the active workspace accent.
+$sponsor-blue: var(--primary-color);
+$sponsor-blue-strong: var(--primary-color);
+$sponsor-blue-strong-hover: var(--primary-hover);
+
+@function sponsor-ink() {
+  @return var(--primary-color);
+}
+@function sponsor-tint($percent) {
+  @return color-mix(in srgb, var(--primary-color) $percent, transparent);
+}

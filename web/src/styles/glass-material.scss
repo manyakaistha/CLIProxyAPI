@@ -1,0 +1,8 @@
+@mixin surface($radius: 28px) {
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-border);
+  border-radius: $radius;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: var(--glass-backdrop-filter);
+  -webkit-backdrop-filter: var(--glass-backdrop-filter);
+}
