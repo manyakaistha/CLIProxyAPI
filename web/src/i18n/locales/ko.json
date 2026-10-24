@@ -1850,9 +1850,9 @@
   },
   "theme": {
     "switch": "테마",
-    "light": "양모 종이",
+    "light": "라이트 글라스",
     "white": "순백",
-    "dark": "다크",
+    "dark": "블랙 글라스",
     "auto": "시스템 설정 따름"
   },
   "sidebar": {

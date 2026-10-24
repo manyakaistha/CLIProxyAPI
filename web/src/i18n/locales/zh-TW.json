@@ -1876,9 +1876,9 @@
   },
   "theme": {
     "switch": "主題",
-    "light": "羊毛紙",
+    "light": "淺色玻璃",
     "white": "純白",
-    "dark": "深色",
+    "dark": "黑色玻璃",
     "auto": "跟隨系統"
   },
   "sidebar": {

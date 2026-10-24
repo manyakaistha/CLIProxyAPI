@@ -1806,9 +1806,9 @@
   },
   "theme": {
     "switch": "Giao diện",
-    "light": "Giấy len",
+    "light": "Kính sáng",
     "white": "Trắng tinh",
-    "dark": "Tối",
+    "dark": "Kính đen",
     "auto": "Theo hệ thống"
   },
   "sidebar": {

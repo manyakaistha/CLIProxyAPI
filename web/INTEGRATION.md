@@ -6,11 +6,19 @@ https://github.com/router-for-me/Cli-Proxy-API-Management-Center at commit
 `web/LICENSE`. The original routes, v8 API client, authentication, and theme persistence
 are preserved.
 
-The floating navigation retains grouped black-and-gold glass panels and the white
-raised-glass theme. The main workspace uses a separate, scoped control-console
-system with clear sans-serif typography, thin borders, integrated metrics, readable
-forms, and subdued surfaces. Sidebar styles are not overridden by workspace tokens.
-Appearance is selectable on the login screen and from the workspace header.
+The interface follows the Black Glass Workspaces skill: near-black surroundings,
+layered charcoal surfaces, silver controls, and restrained semantic status colors.
+Light mode uses the same geometry with pale glass, graphite controls, and subtle
+contact shadows. The existing white preference offers a brighter light variant.
+All routes, navigation, dialogs, forms, and charts share the same semantic theme
+tokens. Appearance is selectable on the login screen and from the workspace header;
+the automatic setting continues to follow the operating system.
+
+Manrope is used for interface text, Space Grotesk for headings, and Syne for the
+wordmark. Local variable WOFF2 fonts are inlined into the production HTML, with
+system fallbacks for additional scripts. Font licenses are retained alongside
+the files in `src/assets/fonts/`; no external font service is required at runtime.
+The original chevron mark and matching favicon are vector assets rendered locally.
 
 The dashboard routing lens is decorative: its geometry is seeded once, it redraws
 on pointer input or layout/theme changes, and it has no idle animation loop. Touch
